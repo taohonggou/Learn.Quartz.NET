@@ -5,4 +5,15 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="quartz" Version="3.0.4" />
+    <PackageReference Include="Quartz.Serialization.Json" Version="3.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="quartz.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
