@@ -42,7 +42,7 @@ namespace Learn.Quartz.NET.ConsoleApp
                     .WithIdentity("trigger1", "group1")
                     .StartNow()
                     .WithSimpleSchedule(x =>
-                        x.WithIntervalInSeconds(5)
+                        x.WithIntervalInSeconds(2)
                         .RepeatForever())
                     .Build();
 
@@ -51,9 +51,9 @@ namespace Learn.Quartz.NET.ConsoleApp
 
 
 
-                await Task.Delay(TimeSpan.FromSeconds(30));
+                //await Task.Delay(TimeSpan.FromSeconds(30));
 
-                await scheduler.Shutdown();
+                //await scheduler.Shutdown();
             }
             catch (Exception ex)
             {
