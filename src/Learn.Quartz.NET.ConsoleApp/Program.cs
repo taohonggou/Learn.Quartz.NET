@@ -1,18 +1,31 @@
 ﻿using System;
 using System.Collections.Specialized;
+using System.IO;
 using System.Threading.Tasks;
-
+using log4net;
+using log4net.Config;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Logging;
 
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config", ConfigFileExtension = "config", Watch = true)]
 namespace Learn.Quartz.NET.ConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            LogProvider.SetCurrentLogProvider(new ConsoleLogProvider());
+            //LogProvider.SetCurrentLogProvider(new ConsoleLogProvider());
+
+            #region 这种方式也可以配置log4net
+            //var repository = LogManager.CreateRepository("ConsoleApp");
+            //XmlConfigurator.Configure(repository, new FileInfo("log4net.config"));
+            //var logger= LogManager.GetLogger("ConsoleApp", typeof(Program)); 
+            #endregion
+
+            var logger = LogManager.GetLogger(typeof(Program));
+            logger.Info("test");
+            logger.Error("error");
 
             RunProgram().GetAwaiter().GetResult();
 
@@ -24,7 +37,7 @@ namespace Learn.Quartz.NET.ConsoleApp
         {
             try
             {
-                
+
 
                 NameValueCollection props = new NameValueCollection
                 {

@@ -6,11 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="quartz" Version="3.0.4" />
     <PackageReference Include="Quartz.Serialization.Json" Version="3.0.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="quartz.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
