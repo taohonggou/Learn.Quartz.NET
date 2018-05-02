@@ -46,8 +46,6 @@ namespace Learn.Quartz.NET.ConsoleApp
                 StdSchedulerFactory factory = new StdSchedulerFactory(props);
                 IScheduler scheduler = await factory.GetScheduler();
 
-                await scheduler.Start();
-
                 IJobDetail job = JobBuilder.Create<HelloJob>()
                     .WithIdentity("job1", "group1").Build();
 
@@ -61,7 +59,7 @@ namespace Learn.Quartz.NET.ConsoleApp
 
                 await scheduler.ScheduleJob(job, trigger);
 
-
+                await scheduler.Start();
 
 
                 //await Task.Delay(TimeSpan.FromSeconds(30));
