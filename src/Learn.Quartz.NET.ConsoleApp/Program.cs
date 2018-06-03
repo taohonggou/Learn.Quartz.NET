@@ -18,6 +18,7 @@ namespace Learn.Quartz.NET.ConsoleApp
             //LogProvider.SetCurrentLogProvider(new ConsoleLogProvider());
             // test modify
             // continue test pull request
+            // featureB
             #region 这种方式也可以配置log4net
             //var repository = LogManager.CreateRepository("ConsoleApp");
             //XmlConfigurator.Configure(repository, new FileInfo("log4net.config"));
