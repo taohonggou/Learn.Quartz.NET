@@ -10,6 +10,7 @@ namespace Learn.Quartz.NET.ConsoleApp
     {
         public async Task Execute(IJobExecutionContext context)
         {
+            // add comments
             await Console.Out.WriteLineAsync("Greetings from HelloJob!");
         }
     }
